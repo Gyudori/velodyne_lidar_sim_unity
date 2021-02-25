@@ -683,7 +683,7 @@ namespace KETI
             {
                 sb.AppendLine(string.Join(delimiter, dataTable[r]));
             }
-            fileDir = "Assets/";
+            fileDir = "../output_sample/";
             StreamWriter outputstream = System.IO.File.CreateText(fileDir + fileName);
             outputstream.WriteLine(sb);
             outputstream.Close();
