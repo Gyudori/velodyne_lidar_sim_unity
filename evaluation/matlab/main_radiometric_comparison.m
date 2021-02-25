@@ -44,18 +44,11 @@ indices = zeros(realPtCloudROI.Count, 1);
 basicDiff = zeros(realPtCloudROI.Count, 1);
 preciseDiff = zeros(realPtCloudROI.Count, 1);
 
-for i = 23414:23416
-    [indices(i),dists] = findNearestNeighbors(basicPtCloudROI,realPtCloudROI.Location(i, :), 1);
-    basicDiff(i) = abs(double(basicPtCloudROI.Intensity(indices(i))) - double(realPtCloudROI.Intensity(i)));
-    preciseDiff(i) = abs(double(precisePtCloudROI.Intensity(indices(i))) - double(realPtCloudROI.Intensity(i)));
-end
-
 for i = 1:realPtCloudROI.Count
     [indices(i),dists] = findNearestNeighbors(basicPtCloudROI,realPtCloudROI.Location(i, :), 1);
     basicDiff(i) = abs(double(basicPtCloudROI.Intensity(indices(i))) - double(realPtCloudROI.Intensity(i)));
     preciseDiff(i) = abs(double(precisePtCloudROI.Intensity(indices(i))) - double(realPtCloudROI.Intensity(i)));
 end
-
 
 
 %% Plotting
