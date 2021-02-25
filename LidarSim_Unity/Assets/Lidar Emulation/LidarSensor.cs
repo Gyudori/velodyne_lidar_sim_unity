@@ -691,7 +691,7 @@ namespace KETI
 
         public void ExportLog(List<int[]> Log_100ms)
         {
-            string fullPath = "Assets/";
+            string fullPath = "../output_sample/";
             string filename = "log";
             if (false == File.Exists(fullPath))
             {
@@ -699,18 +699,7 @@ namespace KETI
                 file.Close();
             }
 
-            StreamWriter sw = new StreamWriter(fullPath + m_RayChannelNum + "Channel_" + filename + ".txt");
-            //string fullPath = "Assets/";
-            //string filename = DateTime.Now.ToString("yyyy/MM/dd-hh-mm-ss");
-            //string foldernamewithdatetime = DateTime.Now.ToString("yyyy/MM/dd");
-            //Directory.CreateDirectory(fullPath + foldernamewithdatetime + "/");
-            //if (false == File.Exists(fullPath + foldernamewithdatetime + "/"))
-            //{
-            //    var file = File.CreateText(fullPath + foldernamewithdatetime + "/" + filename + ".txt");
-            //    file.Close();
-            //}
-
-            //StreamWriter sw = new StreamWriter(fullPath + foldernamewithdatetime + "/" + filename + ".txt");
+            StreamWriter sw = new StreamWriter(fullPath + m_RayChannelNum + "Channel_" + filename + ".txt");           
 
             sw.WriteLine("Simulator Start on " + m_SensorInfo.Time_stamp.ToString("yyyy/MM/dd hh:mm:ss"));
             sw.WriteLine("The selected lidar sensor is " + sensor_type);
